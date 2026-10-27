@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcana Lenormand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="orb orb-a"></div><div class="orb orb-b"></div>
+  <main class="shell">
+    <header class="topbar"><div class="brand"><span class="brand-mark">✦</span><span>ARCANA <i>LENORMAND</i></span></div><span class="status"><span></span> leitura guiada por referência</span></header>
+    <section class="hero"><p class="eyebrow">BARALHO CIGANO · LEITURA SIMBÓLICA</p><h1>Uma pergunta.<br><em>Um novo olhar.</em></h1><p class="hero-copy">Envie sua referência, fotografe a tiragem e receba uma interpretação cuidadosa baseada exclusivamente no seu material.</p></section>
+    <form id="reading-form" class="grid-layout">
+      <section class="panel setup-panel">
+        <div class="section-heading"><span class="step">01</span><div><h2>Prepare a leitura</h2><p>Contexto e fonte de conhecimento</p></div></div>
+        <label class="field-label" for="book">Livro de referência <span>PDF ou TXT</span></label>
+        <label class="dropzone compact" id="book-drop"><input id="book" name="book" type="file" accept=".pdf,.txt,application/pdf,text/plain" required><span class="upload-icon">◈</span><strong id="book-name">Arraste ou selecione seu livro</strong><small>Os significados virão somente deste arquivo</small></label>
+        <label class="field-label" for="question">Sua pergunta ou contexto</label>
+        <textarea id="question" name="question" rows="5" placeholder="Ex.: O que preciso compreender sobre minha vida profissional nos próximos meses?" required></textarea>
+        <div class="privacy-note"><span>⊙</span><p>Seu material é usado apenas nesta leitura e não é incorporado ao projeto.</p></div>
+      </section>
+      <section class="panel image-panel">
+        <div class="section-heading"><span class="step">02</span><div><h2>Mostre sua tiragem</h2><p>Uma imagem nítida ajuda a reconhecer a ordem</p></div></div>
+        <label class="dropzone photo-zone" id="image-drop"><input id="cardsImage" name="cardsImage" type="file" accept="image/jpeg,image/png" capture="environment" required><div id="image-empty"><span class="upload-icon big">⌁</span><strong>Solte a foto das cartas aqui</strong><small>JPG ou PNG · você também pode usar a câmera</small><button type="button" class="ghost-button" id="camera-button">Abrir câmera</button></div><img id="preview" alt="Prévia da tiragem" hidden></label>
+        <div class="tips"><span>✧</span><div><strong>Dica para uma leitura mais precisa</strong><p>Fotografe todas as cartas de cima, com boa luz e sem sobreposição.</p></div></div>
+        <button class="primary-button" type="submit" id="submit-button"><span>Interpretar minha tiragem</span><b>→</b></button>
+      </section>
+    </form>
+    <section class="result-area" id="result-area" hidden><div class="result-header"><div><p class="eyebrow">SUA LEITURA</p><h2>O que as cartas revelam</h2></div><button class="ghost-button" id="new-reading" type="button">Nova leitura</button></div><div id="result-content"></div></section>
+    <footer><span>ARCANA LENORMAND</span><span>Leitura simbólica para reflexão pessoal · Não substitui orientação profissional</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
